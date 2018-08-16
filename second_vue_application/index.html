@@ -10,18 +10,6 @@
 		<input type="text" v-on:input="changeTracker">
 		<p>{{text}}</p>
 	</div>
-	<script>
-	new Vue({
-		el:"#app",
-		data:{
-			text:"Hello World"
-		},
-		methods:{
-			changeTracker:function(event){
-				this.text=event.target.value;
-		}
-	}
-	})
-	</script>
+	<script src="bundle.js"></script>
 </body>
 </html>
