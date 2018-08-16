@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Vue first app</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-on:input="changeTracker">
+		<p>{{text}}</p>
+	</div>
+	<script>
+	new Vue({
+		el:"#app",
+		data:{
+			text:"Hello World"
+		},
+		methods:{
+			changeTracker:function(event){
+				this.text=event.target.value;
+		}
+	}
+	})
+	</script>
+</body>
+</html>
