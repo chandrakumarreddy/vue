@@ -2,29 +2,38 @@ Basic installation setup
 
     include <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script> in head tag and create script tag inside body having script tag with vue instance as below
 
-        new Vue({
-        	el:'#app',
-        	data:{
-        		text:""
-        	}
-        	})
+        At the core of Vue.js is a system that enables us to declaratively render data to the DOM using straightforward template syntax:
+
+    	<div id="app">
+    	  {{ message }}
+    	</div>
+
+    	var app = new Vue({
+    	  el: '#app',
+    	  data: {
+    	    message: 'Hello Vue!'
+    	  }
+    	})
 
 How to create methods
 
     	inside vue instance,initilise property called methods.
-    		<div id="app">
-    	<input type="text" v-on:input="changeTracker">
-    	<p>{{text}}</p>
+
+    	To let users interact with your app, we can use the v-on directive to attach event listeners that invoke methods on our Vue instances:
+
+    	<div id="app-5">
+    	  <p>{{ message }}</p>
+    	  <button v-on:click="reverseMessage">Reverse Message</button>
     	</div>
-    	<script>
-    	new Vue({
-    		el:"#app",
-    		data:{
-    			text:"Hello World"
-    		},
-    		methods:{
-    			changeTracker:function(event){
-    				this.text=event.target.value;
-    		}
-    	}
+
+    	var app5 = new Vue({
+    	  el: '#app-5',
+    	  data: {
+    	    message: 'Hello Vue.js!'
+    	  },
+    	  methods: {
+    	    reverseMessage: function () {
+    	      this.message = this.message.split('').reverse().join('')
+    	    }
+    	  }
     	})
