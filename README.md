@@ -56,3 +56,21 @@ v-bind explanation:-
                             }
                 }
             });
+
+v-once(render once):-
+
+            <p v-once>{{text}}</p>
+            <p>{{sayHello()}}</p>
+
+            new Vue({
+                        el: "#app",
+                        data: {
+                            text: "Hello!"
+                              },
+                        methods: {
+                           sayHello: function() {
+                                this.text="chandra";
+                                return this.text;
+                            }
+                }
+            });
