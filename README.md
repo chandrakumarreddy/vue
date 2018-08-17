@@ -38,7 +38,7 @@ How to create methods
           }
         })
 
-v-bind explanation:-
+v-bind directive:-
 
                 <p>{{text}}</p>
                 <button v-on:click="send">Download</button>
@@ -57,7 +57,7 @@ v-bind explanation:-
                 }
             });
 
-v-once(render once):-
+v-once(render once) directive:-
 
             <p v-once>{{text}}</p>
             <p>{{sayHello()}}</p>
@@ -74,3 +74,21 @@ v-once(render once):-
                             }
                 }
             });
+
+v-html directive :-
+
+                <p>{{text}}</p>
+                <p v-html="finishedLink"></p>
+
+                new Vue({
+                  el: "#app",
+                  data: {
+                    text: "chandra",
+                    finishedLink: "<a href='http://nitrr.ac.in' target='_blank'>Nitrr</a>"
+                  },
+                  methods: {
+                    sayHello: function() {
+                      alert("Hello");
+                    }
+                  }
+                });
