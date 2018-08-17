@@ -110,4 +110,7 @@ v-on directive :-
                     }
                   }
                 });
-        
+
+function(argument,default argument) :-
+
+          argument: once passed by uses and default argument is predefined as $event(vue fixed)
