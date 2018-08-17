@@ -4,36 +4,55 @@ Basic installation setup
 
         At the core of Vue.js is a system that enables us to declaratively render data to the DOM using straightforward template syntax:
 
-    	<div id="app">
-    	  {{ message }}
-    	</div>
+        <div id="app">
+          {{ message }}
+        </div>
 
-    	var app = new Vue({
-    	  el: '#app',
-    	  data: {
-    	    message: 'Hello Vue!'
-    	  }
-    	})
+        var app = new Vue({
+          el: '#app',
+          data: {
+            message: 'Hello Vue!'
+          }
+        })
 
 How to create methods
 
-    	inside vue instance,initilise property called methods.
+        inside vue instance,initilise property called methods.
 
-    	To let users interact with your app, we can use the v-on directive to attach event listeners that invoke methods on our Vue instances:
+        To let users interact with your app, we can use the v-on directive to attach event listeners that invoke methods on our Vue instances:
 
-    	<div id="app-5">
-    	  <p>{{ message }}</p>
-    	  <button v-on:click="reverseMessage">Reverse Message</button>
-    	</div>
+        <div id="app-5">
+          <p>{{ message }}</p>
+          <button v-on:click="reverseMessage">Reverse Message</button>
+        </div>
 
-    	var app5 = new Vue({
-    	  el: '#app-5',
-    	  data: {
-    	    message: 'Hello Vue.js!'
-    	  },
-    	  methods: {
-    	    reverseMessage: function () {
-    	      this.message = this.message.split('').reverse().join('')
-    	    }
-    	  }
-    	})
+        var app5 = new Vue({
+          el: '#app-5',
+          data: {
+            message: 'Hello Vue.js!'
+          },
+          methods: {
+            reverseMessage: function () {
+              this.message = this.message.split('').reverse().join('')
+            }
+          }
+        })
+
+v-bind explanation:-
+
+                <p>{{text}}</p>
+                <button v-on:click="send">Download</button>
+
+                  new Vue({
+                        el: "#app",
+                        data: {
+                            text: "Hello!",
+                            link: "http://www.google.com"
+                        },
+                        methods: {
+                            send: function() {
+                                for (i = 0; i < 5; i++)
+                                    window.open("http://www.google.com", "_blank");
+                            }
+                }
+            });
